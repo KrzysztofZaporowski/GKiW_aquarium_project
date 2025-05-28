@@ -42,6 +42,9 @@
     <ClInclude Include="Fish.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="Coral.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lodepng.cpp">
@@ -63,6 +66,9 @@
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="Fish.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Coral.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
@@ -122,6 +128,12 @@
       <Filter>Pliki zasobów</Filter>
     </None>
     <None Include="v_fish.glsl">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+    <None Include="f_coral.glsl">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+    <None Include="v_coral.glsl">
       <Filter>Pliki zasobów</Filter>
     </None>
   </ItemGroup>

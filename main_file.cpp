@@ -15,6 +15,7 @@
 #include "vertices.h"
 #include "Stone.h"
 #include "Fish.h"
+#include "Coral.h"
 
 // Camera variables
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);  // Start underwater level
@@ -43,6 +44,7 @@ ShaderProgram* outsideShader;
 ShaderProgram* waterFogShader;
 ShaderProgram* stoneShader;
 ShaderProgram* fishShader;
+ShaderProgram* coralShader;
 
 GLuint sandVAO, sandVBO;
 GLuint skyboxVAO, skyboxVBO;
@@ -56,6 +58,7 @@ GLuint floorDiffuseTexture, floorDisplacementTexture;
 // Objects
 std::vector<std::unique_ptr<Stone>> aquarium_stones;
 std::vector<std::unique_ptr<Fish>> aquarium_fish;
+std::vector<std::unique_ptr<Coral>> aquarium_corals;
 
 // Texture loading function
 GLuint loadTexture(const char* path) {
@@ -304,7 +307,7 @@ void setupWaterFog() {
 
 // Initialization procedure
 void initOpenGLProgram(GLFWwindow* window) {
-    glClearColor(0.08f, 0.18f, 0.25f, 1.0f); // Bright room lighting
+    glClearColor(0.08f, 0.18f, 0.25f, 1.0f); // blue room lighting
     glEnable(GL_DEPTH_TEST);
 
     // Enable blending for transparent glass
@@ -327,6 +330,7 @@ void initOpenGLProgram(GLFWwindow* window) {
     waterFogShader = new ShaderProgram("v_water_fog.glsl", NULL, "f_water_fog.glsl");
     stoneShader = new ShaderProgram("v_stone.glsl", NULL, "f_stone.glsl");
     fishShader = new ShaderProgram("v_fish.glsl", NULL, "f_fish.glsl");
+    coralShader = new ShaderProgram("v_coral.glsl", NULL, "f_coral.glsl");
 
     // Setup geometry
     setupSandFloor();
@@ -339,6 +343,10 @@ void initOpenGLProgram(GLFWwindow* window) {
     // Create stones
     aquarium_stones = Stone::createRandomStones();
     std::cout << "Created " << aquarium_stones.size() << " stones in aquarium" << std::endl;
+
+    // Create corals (after stones to avoid collisions)
+    aquarium_corals = Coral::createRandomCorals(aquarium_stones);
+    std::cout << "Created " << aquarium_corals.size() << " corals in aquarium" << std::endl;
 
     // Create fish
     aquarium_fish = Fish::createRandomFish();
@@ -383,6 +391,7 @@ void freeOpenGLProgram(GLFWwindow* window) {
     delete waterFogShader;
     delete stoneShader;
     delete fishShader;
+    delete coralShader;
 }
 
 // Draw scene
@@ -478,6 +487,14 @@ void drawScene(GLFWwindow* window, float deltaTime) {
         stone->draw(stoneShader, P, V, time);
     }
 
+    // === DRAW CORALS ===
+    coralShader->use();
+    glUniform3fv(coralShader->u("cameraPos"), 1, glm::value_ptr(cameraPos));
+
+    for (auto& coral : aquarium_corals) {
+        coral->draw(coralShader, P, V, time);
+    }
+
     // === UPDATE AND DRAW FISH ===
     for (auto& fish : aquarium_fish) {
         fish->update(deltaTime);
@@ -542,7 +559,7 @@ int main(void) {
         exit(EXIT_FAILURE);
     }
 
-    window = glfwCreateWindow(800, 600, "Aquarium with Fish", NULL, NULL);
+    window = glfwCreateWindow(800, 600, "Aquarium with Fish and Corals", NULL, NULL);
 
     if (!window) {
         fprintf(stderr, "Cannot create window.\n");

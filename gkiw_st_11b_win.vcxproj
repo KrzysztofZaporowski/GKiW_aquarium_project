@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
+    <ClInclude Include="Coral.h" />
     <ClInclude Include="Fish.h" />
     <ClInclude Include="lodepng.h" />
     <ClInclude Include="ModelLoader.h" />
@@ -30,6 +31,7 @@
     <ClInclude Include="vertices.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Coral.cpp" />
     <ClCompile Include="Fish.cpp" />
     <ClCompile Include="lodepng.cpp" />
     <ClCompile Include="main_file.cpp" />
@@ -39,6 +41,7 @@
     <ClCompile Include="vertices.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="f_coral.glsl" />
     <None Include="f_fish.glsl" />
     <None Include="f_frame.glsl" />
     <None Include="f_glass.glsl" />
@@ -49,6 +52,7 @@
     <None Include="f_stone.glsl" />
     <None Include="f_water_fog.glsl" />
     <None Include="g_simplest.glsl" />
+    <None Include="v_coral.glsl" />
     <None Include="v_fish.glsl" />
     <None Include="v_frame.glsl" />
     <None Include="v_glass.glsl" />
