@@ -2,6 +2,9 @@
 
 ## 📖 Opis Projektu
 
+![Image](https://github.com/user-attachments/assets/e4ad1f6e-b057-4e3e-9ce5-940bef7bbd69)
+![Image](https://github.com/user-attachments/assets/aa3559d3-3f25-4121-9092-f7ab6ff5b91a)
+
 Interaktywne 3D akwarium z rybami, koralami i kamieniami, renderowane w czasie rzeczywistym przy użyciu OpenGL. Projekt symuluje podwodne środowisko z realistycznymi efektami wizualnymi, animacjami i systemem oświetlenia.
 
 ### Główne Funkcje
