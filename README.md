@@ -235,21 +235,27 @@ g++ -std=c++17 main_file.cpp shaderprogram.cpp vertices.cpp lodepng.cpp \
 
 ---
 
-## 🚀 Rozszerzenia Projektu
-
-### Możliwe Ulepszenia:
-- 🌱 **Więcej rodzajów korali** z różnymi animacjami
-- 🦈 **Różne wielkości ryb** (małe, średnie, duże)
-- 💡 **Interaktywne oświetlenie** (dzień/noc)
-- 🎵 **System cząsteczek** (bąbelki, plankton)
-- 🎮 **GUI** do zmiany ustawień w czasie rzeczywistym
-- 📱 **Sterowanie dotykowe** na urządzeniach mobilnych
-
----
-
-## 📝 Autor
+## 📝 Autorzy
 Projekt 3D Aquarium - OpenGL/C++
 
-### Licencja
-- **LodePNG**: Zlib License (Lode Vandevenne)
-- **Reszta kodu**: [Określ swoją licencję]
+Aleksander Staszweski
+
+Krzysztof Zaporowski
+
+## 📄 Licencja
+
+Cały kod w tym repozytorium jest open source i może być używany do własnych celów, również komercyjnych, zgodnie z poniższymi licencjami:
+
+- **LodePNG** – objęty licencją **zlib**, autor: *Lode Vandevenne*
+- **Pozostały kod** – objęty licencją **MIT**
+
+### ✅ Co wolno:
+- Używać kodu w projektach prywatnych i komercyjnych.
+- Modyfikować kod, adaptować go do własnych potrzeb.
+- Rozpowszechniać kod źródłowy lub binarny (np. jako część aplikacji).
+
+### ⚠️ Warunki:
+- Musisz zachować informacje o licencjach w kodzie (w plikach źródłowych lub dokumentacji).
+- Nie wolno usuwać ani zmieniać oryginalnych adnotacji licencyjnych.
+- W przypadku modyfikacji **LodePNG**, należy zaznaczyć, że kod został zmieniony (zgodnie z licencją **zlib**).
+
