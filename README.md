@@ -7,6 +7,9 @@
 
 Interaktywne 3D akwarium z rybami, koralami i kamieniami, renderowane w czasie rzeczywistym przy użyciu OpenGL. Projekt symuluje podwodne środowisko z realistycznymi efektami wizualnymi, animacjami i systemem oświetlenia.
 
+# JEŻELI NIE CHCESZ KLONOWAĆ TEGO REPOZYTORIUM !!!
+Link do gotowego zip'a: https://drive.google.com/file/d/1VLhPDUKh1JkrgxwW4C9XfdqaBuarcH35/view?usp=sharing
+
 ### Główne Funkcje
 - 🐠 **Animowane ryby** z AI ruchu (pływają losowo po akwarium)
 - 🪨 **Kamienie** z proceduralnym rozmieszczeniem 
