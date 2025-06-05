@@ -238,6 +238,10 @@ g++ -std=c++17 main_file.cpp shaderprogram.cpp vertices.cpp lodepng.cpp \
 
 ---
 
+## Źródła
+Modele 3D: https://free3d.com/pl/ 
+Tekstury: https://unsplash.com/de 
+
 ## 📝 Autorzy
 Projekt 3D Aquarium - OpenGL/C++
 
